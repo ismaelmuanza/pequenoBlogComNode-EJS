@@ -1,0 +1,37 @@
+<%- include('../../partials/header') %>
+    <%- include('../../partials/navbar') %>
+
+        <body>
+            <div class="container">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Slug</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <% categorias.forEach(categoria => {%>
+
+                        <tr>
+                            <th scope="row">
+                                <%= categoria.id_categoria %>
+                            </th>
+                            <td>
+                                <%= categoria.titulo %>
+                            </td>
+                            <td>
+                                <%= categoria.slug %>
+                            </td>
+                            <td>
+                                <a href="/categoria/editar/<%= categoria.id_categoria %>" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="/categoria/deletar/<%= categoria.id_categoria %>" class="btn btn-danger btn-sm">Deletar</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            </tbody>
+                </table>
+            </div>
+        </body>
+        <%- include('../../partials/footer') %>

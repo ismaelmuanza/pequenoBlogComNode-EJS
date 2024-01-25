@@ -1,0 +1,32 @@
+<%- include('../../partials/header') %>
+    <%- include('../../partials/navbar') %>
+
+        <body>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Novo artigo</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/artigo/novo" method="post">
+                            <div class="form-group">
+                                <input type="text" name="titulo" placeholder="Defina o titulo do artigo" class="form-control"><br>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="artigo" cols="30" rows="10" placeholder="Escreva o artigo aqui!" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <select name="categoria_artigo">
+                                    <% categorias.forEach(categoria => { %>
+                                        <option value="<%= categoria.id_categoria %>"><%= categoria.titulo %></option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                            <input type="submit" value="Cadastrar" class="btn btn-success">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </body>
+        <%- include('../../partials/footer') %>

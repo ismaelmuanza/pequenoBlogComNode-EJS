@@ -1,0 +1,24 @@
+<%- include('../../partials/header') %>
+    <%- include('../../partials/navbar') %>
+
+        <body>
+            <div class="container">
+                <% artigo.forEach(a => { %>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>
+                                <%= a.titulo %>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <%= a.artigo %>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <% })%>
+
+            </div>
+        </body>
+        <%- include('../../partials/footer') %>

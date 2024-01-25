@@ -1,0 +1,5 @@
+
+insert() - insere no banco
+update() - atualiza
+delete() -deleta
+select() - seleciona
